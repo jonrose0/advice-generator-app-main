@@ -43,15 +43,7 @@ console.log('tst')
 
 
 
-export default async function handler(request, response) {
-  const response = await fetch('https://api.adviceslip.com/advice', {
-			method: 'GET',
-			headers: { accept: 'application/json' },
-		});
-		// const response = await fetch(`${ApiKey}`);
-		console.log(response);
-		const result = await response.json();
-		console.log(result);
+export default function handler(request, response) {
   return response.status(200).json({
     body: request.body,
     query: request.query,
