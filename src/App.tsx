@@ -76,17 +76,14 @@ function App() {
 	async function getData() {
 		// const ApiKey = import.meta.env.API_KEY;
 		// const response = await fetch(`https://api.adviceslip.com/${ApiKey}`);
-		const response = await fetch(
-			'https://advice-generator-app-main-lake.vercel.app/api',
-			{
-				method: 'GET',
-				headers: { accept: 'application/json' },
-			}
-		);
+		const response = await fetch('./api', {
+			method: 'GET',
+			headers: { accept: 'application/json' },
+		});
 		// const response = await fetch(`${ApiKey}`);
 		console.log(response);
 		const result = await response.json();
-		// console.log(result);
+		console.log(result);
 		// setData(result.slip);
 	}
 
