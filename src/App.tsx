@@ -83,7 +83,7 @@ function App() {
 		// const response = await fetch(`${ApiKey}`);
 		console.log(response);
 		const result = await response.json();
-		console.log(result);
+		console.log(result.env);
 		// setData(result.slip);
 	}
 
