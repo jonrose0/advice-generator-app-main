@@ -76,7 +76,7 @@ function App() {
 	async function getData() {
 		// const ApiKey = import.meta.env.API_KEY;
 		// const response = await fetch(`https://api.adviceslip.com/${ApiKey}`);
-		const response = await fetch('./api', {
+		const response = await fetch('/api', {
 			method: 'GET',
 			headers: { accept: 'application/json' },
 		});
