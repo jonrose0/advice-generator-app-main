@@ -5,7 +5,7 @@
 
 // const app = express()
 
-// console.log('tst')
+console.log('tst')
 
 // app.use(
 //   cors({
