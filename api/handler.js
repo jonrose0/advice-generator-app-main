@@ -5,6 +5,8 @@ const axios = require('axios')
 
 const app = express()
 
+console.log('tst')
+
 app.use(
   cors({
     origin: '*',
@@ -23,7 +25,7 @@ app.get('/api/smart-floor-price', (req, res) => {
       const config = {
         method: 'GET',
         headers: { Authorization: `Bearer ${process.env.YOUR_API_KEY}` },
-        url: `https://api.rarify.tech/data/contracts/ethereum:${contractAddress}/smart-floor-price`,
+        url: `/api/smart-floor-price`,
       }
       const data = await axios(config).then((res) => res.data)
 
