@@ -74,15 +74,17 @@ function App() {
 	}, []);
 
 	async function getData() {
-		const ApiKey = import.meta.env.API_KEY;
-		const response = await fetch(`https://api.adviceslip.com/${ApiKey}`);
+		// const ApiKey = import.meta.env.API_KEY;
+		// const response = await fetch(`https://api.adviceslip.com/${ApiKey}`);
+		const response = await fetch('http://localhost:3000/api/handler', {
+			method: 'GET',
+			headers: { accept: 'application/json' },
+		});
 		// const response = await fetch(`${ApiKey}`);
-
-		// console.log(ApiKey);
-
+		console.log(response);
 		const result = await response.json();
-
-		setData(result.slip);
+		// console.log(result);
+		// setData(result.slip);
 	}
 
 	function handleClick() {
