@@ -83,13 +83,13 @@ function App() {
 		// const response = await fetch(`${ApiKey}`);
 		console.log(response);
 		const result = await response.json();
-		console.log(result.env);
-		const refetch = await fetch(`https://api.adviceslip.com/${result.env}`, {
-			method: 'GET',
-			headers: { accept: 'application/json' },
-		});
-		const refetchresult = await refetch.json();
-		console.log(refetchresult);
+		console.log(result.work);
+		// const refetch = await fetch(`https://api.adviceslip.com/${result.env}`, {
+		// 	method: 'GET',
+		// 	headers: { accept: 'application/json' },
+		// });
+		// const refetchresult = await refetch.json();
+		// console.log(refetchresult);
 		// setData(result.slip);
 	}
 

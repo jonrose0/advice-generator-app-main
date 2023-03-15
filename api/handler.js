@@ -2,10 +2,11 @@
 // const cors = require('cors')
 // require('dotenv').config()
 // const axios = require('axios')
+import axios from 'axios'
 
 // const app = express()
 
-console.log('tst')
+// console.log('tst')
 
 // app.use(
 //   cors({
@@ -43,13 +44,36 @@ console.log('tst')
 
 
 
-export default function handler(request, response) {
-  return response.status(200).json({
+export default async function handler(request, response) {
+  console.log('test')
+  const well = 'well'
+  console.log(well)
+  try {
+    const res = await axios.get(`https://api.adviceslip.com/${process.env.API_KEY}`);
+    console.log(res.data.slip.advice);
+    const waiting = await response.status(200).json({
     body: request.body,
     query: request.query,
     cookies: request.cookies,
     env: process.env.API_KEY,
+    work: res.data.slip.advice
   });
+    return waiting
+  } catch (error) {
+    console.error(error);
+  }
+  // axios.get('https://api.adviceslip.com/advice')
+  // .then(res => console.log('res'))
+  // fetch('https://api.adviceslip.com/advice')
+  // .then(res => res.json())
+  // .then(result => console.log(result))
+  // return response.status(200).json({
+  //   body: request.body,
+  //   query: request.query,
+  //   cookies: request.cookies,
+  //   env: process.env.API_KEY,
+  //   work: response.data.slip.advice
+  // });
 }
 
 // deploy
