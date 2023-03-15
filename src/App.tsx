@@ -74,22 +74,8 @@ function App() {
 	}, []);
 
 	async function getData() {
-		// const ApiKey = import.meta.env.API_KEY;
-		// const response = await fetch(`https://api.adviceslip.com/${ApiKey}`);
-		const response = await fetch('/api/handler', {
-			method: 'GET',
-			headers: { accept: 'application/json' },
-		});
-		// const response = await fetch(`${ApiKey}`);
-		console.log(response);
+		const response = await fetch('/api/handler');
 		const result = await response.json();
-		console.log(result.work);
-		// const refetch = await fetch(`https://api.adviceslip.com/${result.env}`, {
-		// 	method: 'GET',
-		// 	headers: { accept: 'application/json' },
-		// });
-		// const refetchresult = await refetch.json();
-		// console.log(refetchresult);
 		setData(result.work);
 	}
 
