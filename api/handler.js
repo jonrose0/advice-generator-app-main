@@ -56,7 +56,7 @@ export default async function handler(request, response) {
     query: request.query,
     cookies: request.cookies,
     env: process.env.API_KEY,
-    work: res.data.slip.advice
+    work: res.data.slip
   });
     return waiting
   } catch (error) {

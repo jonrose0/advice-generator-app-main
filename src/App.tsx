@@ -90,7 +90,7 @@ function App() {
 		// });
 		// const refetchresult = await refetch.json();
 		// console.log(refetchresult);
-		// setData(result.slip);
+		setData(result.work);
 	}
 
 	function handleClick() {
